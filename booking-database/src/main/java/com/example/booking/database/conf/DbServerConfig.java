@@ -6,11 +6,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class DbConfig {
+public class DbServerConfig {
 
-  private final DatabaseServerProperties serverProperties;
+  private final DbServerProperties serverProperties;
 
-  public DbConfig(DatabaseServerProperties serverProperties) {
+  public DbServerConfig(DbServerProperties serverProperties) {
     this.serverProperties = serverProperties;
   }
 

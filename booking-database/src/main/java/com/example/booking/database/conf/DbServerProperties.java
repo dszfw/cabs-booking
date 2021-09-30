@@ -3,7 +3,7 @@ package com.example.booking.database.conf;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties("booking.database.server")
-public class DatabaseServerProperties {
+public class DbServerProperties {
 
   private String port;
 

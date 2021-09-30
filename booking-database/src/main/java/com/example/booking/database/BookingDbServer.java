@@ -6,10 +6,10 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
 @SpringBootApplication
 @ConfigurationPropertiesScan
-public class BookingDatabaseServer {
+public class BookingDbServer {
 
   public static void main(String[] args) {
-    SpringApplication.run(BookingDatabaseServer.class, args);
+    SpringApplication.run(BookingDbServer.class, args);
   }
 
 }
