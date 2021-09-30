@@ -16,6 +16,7 @@
     <module>booking-domain</module>
     <module>booking-dto</module>
     <module>booking-dao</module>
+    <module>booking-database</module>
     <module>booking-messaging</module>
     <module>booking-producer-service</module>
     <module>booking-consumer-service</module>
