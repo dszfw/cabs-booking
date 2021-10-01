@@ -20,6 +20,7 @@ Rabbit web (guest/guest): http://localhost:15672
 ## Demo
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/2r6nt129eho/0.jpg)](http://www.youtube.com/watch?v=2r6nt129eho "demo backend - Spring boot, RabbitMQ, docker compose, H2")
+https://www.youtube.com/watch?v=2r6nt129eho
 
 
 ## Project Modules
