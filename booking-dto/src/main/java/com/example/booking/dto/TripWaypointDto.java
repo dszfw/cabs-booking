@@ -5,17 +5,17 @@ import javax.validation.constraints.NotNull;
 
 public class TripWaypointDto implements Serializable {
 
-  private long id;
+  private Long id;
   @NotNull
   private String locality;
   private Double latitude;
   private Double longitude;
 
-  public long getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

@@ -137,6 +137,9 @@ components:
       required:
         - locality
       properties:
+        id:
+          type: integer
+          format: int64
         locality:
           type: string
         latitude:
