@@ -4,16 +4,21 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PositiveOrZero;
 
 public class BookingDto implements Serializable {
 
   private String id;
+  @NotNull
   private String passengerName;
+  @NotNull
   private String passengerContactNumber;
   private LocalDateTime pickupTime;
   private boolean asap;
   private long waitingTime;
   private long numberOfPassengers;
+  @PositiveOrZero
   private BigDecimal price;
   private long rating;
   private LocalDateTime createdOn;
