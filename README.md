@@ -1,6 +1,22 @@
 # Cabs booking backend
 Simple backend for managing bookings. Booking producer service, REST layer, booking consumer service and RabbitMQ as message broker.
 
+## Getting Started
+
+**build.sh** - compile and install modules, build docker images
+
+**run.sh** - run services in docker containers, docker-compose is used
+
+Booking REST API is available on port 8080, endpoint **/booking**
+
+Swagger UI API documentation: http://localhost:8080/swagger-ui.html
+
+H2 console (user sa, empty password): http://localhost:8081/h2-console
+
+JDBC URL: jdbc:h2:mem:booking
+
+Rabbit web (guest/guest): http://localhost:15672
+
 ## Project Modules
 
 * **booking-producer-service**
@@ -34,19 +50,3 @@ Simple backend for managing bookings. Booking producer service, REST layer, book
 * **booking-dependencies**
 
     Project parent for dependency management
-
-## Getting Started
-
-**build.sh** - compile and install modules, build docker images
-
-**run.sh** - run services in docker containers, docker-compose is used
-
-Booking REST API is available on port 8080, endpoint **/booking**
-
-Swagger UI API documentation: http://localhost:8080/swagger-ui.html
-
-H2 console (user sa, empty password): http://localhost:8081/h2-console
-
-JDBC URL: jdbc:h2:mem:booking
-
-Rabbit web (guest/guest): http://localhost:15672
