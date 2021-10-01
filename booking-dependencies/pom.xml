@@ -26,6 +26,8 @@
     <spring-boot.version>2.5.5</spring-boot.version>
     <mapstruct.version>1.4.2.Final</mapstruct.version>
     <logbook.version>2.13.0</logbook.version>
+    <swagger-annotations.version>2.1.10</swagger-annotations.version>
+    <springdoc-openapi-ui.version>1.5.10</springdoc-openapi-ui.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>11</java.version>
@@ -47,6 +49,16 @@
         <groupId>org.zalando</groupId>
         <artifactId>logbook-spring-boot-starter</artifactId>
         <version>${logbook.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.swagger.core.v3</groupId>
+        <artifactId>swagger-annotations</artifactId>
+        <version>${swagger-annotations.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-ui</artifactId>
+        <version>${springdoc-openapi-ui.version}</version>
       </dependency>
       <dependency>
         <groupId>com.example</groupId>

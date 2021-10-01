@@ -1,6 +1,7 @@
 package com.example.booking.domain;
 
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,9 +13,10 @@ public class TripWaypoint {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
+  @Column(nullable = false)
   private String locality;
-  private double latitude;
-  private double longitude;
+  private Double latitude;
+  private Double longitude;
 
   public long getId() {
     return id;

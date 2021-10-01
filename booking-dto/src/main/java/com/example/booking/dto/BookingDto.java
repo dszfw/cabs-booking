@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 
@@ -17,12 +19,15 @@ public class BookingDto implements Serializable {
   private LocalDateTime pickupTime;
   private boolean asap;
   private long waitingTime;
+  @Min(0)
+  @Max(16)
   private long numberOfPassengers;
   @PositiveOrZero
   private BigDecimal price;
-  private long rating;
+  private double rating;
   private LocalDateTime createdOn;
   private LocalDateTime lastModifiedOn;
+  @NotNull
   private List<TripWaypointDto> tripWaypoints;
 
   public String getId() {
@@ -89,11 +94,11 @@ public class BookingDto implements Serializable {
     this.price = price;
   }
 
-  public long getRating() {
+  public double getRating() {
     return rating;
   }
 
-  public void setRating(long rating) {
+  public void setRating(double rating) {
     this.rating = rating;
   }
 

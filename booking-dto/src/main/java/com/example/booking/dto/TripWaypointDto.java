@@ -1,13 +1,15 @@
 package com.example.booking.dto;
 
 import java.io.Serializable;
+import javax.validation.constraints.NotNull;
 
 public class TripWaypointDto implements Serializable {
 
   private long id;
+  @NotNull
   private String locality;
-  private double latitude;
-  private double longitude;
+  private Double latitude;
+  private Double longitude;
 
   public long getId() {
     return id;

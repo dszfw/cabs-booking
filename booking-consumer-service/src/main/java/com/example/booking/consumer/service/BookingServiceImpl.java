@@ -4,6 +4,7 @@ import com.example.booking.dao.repo.BookingRepository;
 import com.example.booking.dto.BookingDto;
 import com.example.booking.dto.mapper.BookingMapper;
 import java.time.LocalDateTime;
+import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -23,6 +24,7 @@ public class BookingServiceImpl implements BookingService {
   }
 
   @Override
+  @Transactional
   public void update(BookingDto bookingDto) {
     bookingDto.setLastModifiedOn(LocalDateTime.now());
     bookingDto.setCreatedOn(bookingRepository.getById(bookingDto.getId()).getCreatedOn());

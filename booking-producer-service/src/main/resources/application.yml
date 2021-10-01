@@ -8,6 +8,15 @@ spring:
     hibernate:
       ddl-auto: none
 
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    url: /api-docs.yml
+
 logging:
   level:
     org.zalando.logbook: TRACE
+logbook:
+  write:
+    max-body-size: 100

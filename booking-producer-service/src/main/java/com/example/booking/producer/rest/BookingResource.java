@@ -1,6 +1,6 @@
 package com.example.booking.producer.rest;
 
-import static com.example.booking.producer.rest.BookingController.BOOKING_PATH;
+import static com.example.booking.producer.rest.BookingResource.BOOKING_PATH;
 
 import com.example.booking.dto.BookingDto;
 import com.example.booking.producer.exception.BookingNotFoundException;
@@ -20,14 +20,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(BOOKING_PATH)
-public class BookingController {
+public class BookingResource {
 
   public static final String BOOKING_PATH = "/booking";
   private static final String BOOKING_LOCATION_PATTERN = BOOKING_PATH + "/%s";
 
   private final BookingService bookingService;
 
-  public BookingController(BookingService bookingService) {
+  public BookingResource(BookingService bookingService) {
     this.bookingService = bookingService;
   }
 

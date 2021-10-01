@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -17,14 +18,16 @@ public class Booking {
 
   @Id
   private String id;
+  @Column(nullable = false)
   private String passengerName;
+  @Column(nullable = false)
   private String passengerContactNumber;
   private LocalDateTime pickupTime;
   private boolean asap;
   private long waitingTime;
   private long numberOfPassengers;
   private BigDecimal price;
-  private long rating;
+  private double rating;
   private LocalDateTime createdOn;
   private LocalDateTime lastModifiedOn;
   @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -101,11 +104,11 @@ public class Booking {
     this.price = price;
   }
 
-  public long getRating() {
+  public double getRating() {
     return rating;
   }
 
-  public void setRating(long rating) {
+  public void setRating(double rating) {
     this.rating = rating;
   }
 

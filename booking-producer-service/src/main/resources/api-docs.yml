@@ -1,0 +1,155 @@
+openapi: 3.0.0
+info:
+  description: |
+    Booking API documentation.
+  version: "0.0.1"
+  title: Booking API
+tags:
+  - name: "booking"
+    description: basic CRUD operations
+paths:
+  /booking:
+    post:
+      tags:
+        - "booking"
+      summary: "Create booking"
+      operationId: "createBooking"
+      requestBody:
+        $ref: "#/components/requestBodies/Booking"
+      responses:
+        202:
+          description: "Accepted, \"Location\" header = \"/booking/{bookingId}\""
+        400:
+          description: "Bad request"
+  /booking/{bookingId}:
+    get:
+      tags:
+        - "booking"
+      summary: "Get booking by id"
+      description: ""
+      operationId: "getBookingById"
+      parameters:
+        - name: "bookingId"
+          in: "path"
+          description: "The booking id that needs to be fetched."
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+        "404":
+          description: "Booking not found"
+    put:
+      tags:
+        - "booking"
+      summary: "Update booking"
+      operationId: "updateBookingById"
+      parameters:
+        - name: "bookingId"
+          in: "path"
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Booking'
+        description: Updated booking object
+        required: true
+      responses:
+        "202":
+          description: "Accepted"
+        "404":
+          description: "Booking not found"
+    delete:
+      tags:
+        - "booking"
+      summary: "Delete booking"
+      operationId: "deleteBooking"
+      parameters:
+        - name: "bookingId"
+          in: "path"
+          required: true
+          schema:
+            type: string
+      responses:
+        "202":
+          description: "Accepted"
+        "404":
+          description: "Booking not found"
+
+externalDocs:
+  description: Find out more about Swagger
+  url: 'http://swagger.io'
+components:
+  schemas:
+    Booking:
+      type: object
+      required:
+        - passengerName
+        - passengerContactNumber
+        - tripWaypoints
+      properties:
+        id:
+          type: string
+          example: "ea9b5483-5bb3-4df4-8380-af39811ff81b"
+          readOnly: true
+        passengerName:
+          type: string
+        passengerContactNumber:
+          type: string
+        pickupTime:
+          type: string
+          format: date-time
+        asap:
+          type: boolean
+        waitingTime:
+          type: integer
+          format: int64
+        numberOfPassengers:
+          type: integer
+        price:
+          type: number
+          format: double
+          minimum: 0
+        rating:
+          type: number
+          format: double
+        createdOn:
+          type: string
+          format: date-time
+        lastModifiedOn:
+          type: string
+          format: date-time
+        tripWaypoints:
+          type: array
+          items: {
+            $ref: '#/components/schemas/TripWaypoint'
+          }
+    TripWaypoint:
+      type: object
+      required:
+        - locality
+      properties:
+        locality:
+          type: string
+        latitude:
+          type: number
+          format: double
+        longitude:
+          type: number
+          format: double
+
+  requestBodies:
+    Booking:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Booking'
+      required: true
